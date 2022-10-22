@@ -99,6 +99,7 @@ public class AddressBookController {
         queryWrapper.eq(null != addressBook.getUserId(), AddressBook::getUserId, addressBook.getUserId());
         queryWrapper.orderByDesc(AddressBook::getUpdateTime);
 
+
         //SQL:select * from address_book where user_id = ? order by update_time desc
         return R.success(addressBookService.list(queryWrapper));
     }
